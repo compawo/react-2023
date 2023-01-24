@@ -1,11 +1,14 @@
-import React from 'react';
+import {UserForms,  Users} from "./components";
 
 const App = () => {
-  return (
-      <div>
-        app
-      </div>
-  );
+
+    return (
+        <div>
+            <UserForms/>
+            <hr/>
+            <Users/>
+        </div>
+    );
 };
 
 export {App};
