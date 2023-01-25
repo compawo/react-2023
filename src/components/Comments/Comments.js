@@ -1,7 +1,6 @@
 import {Comment} from "../Comment/Comment";
 
-const Comments = ({users}) => {
-
+const Comments = ({comments}) => {
 
     return (
         <div>

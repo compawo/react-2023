@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Comment = ({user}) => {
-    const {id, name, email, body} = user;
+const Comment = ({comment}) => {
+    const {id, name, email, body} = comment;
 
     return (
         <div>

@@ -2,7 +2,7 @@ import React from 'react';
 import {useForm} from "react-hook-form";
 import {joiResolver} from "@hookform/resolvers/joi";
 
-import {userValidator} from "../../validators/userValidator";
+import {userValidator} from "../../validators";
 import {userService} from "../../services";
 
 const UserForms = ({setUsers}) => {
