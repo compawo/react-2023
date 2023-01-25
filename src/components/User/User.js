@@ -1,13 +1,14 @@
 import React from 'react';
 
 const User = ({user, setUserDetails}) => {
-    const {id, name} = user;
+    const {id, name, website} = user;
 
     return (
         <div>
             <div>id: {id}</div>
             <div>name: {name}</div>
-            <button onClick={() => setUserDetails(user)}>Get Website</button>
+            <div>website: {website}</div>
+            <button onClick={() => setUserDetails(user)}>Get Name</button>
         </div>
     );
 };
