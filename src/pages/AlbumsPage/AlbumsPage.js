@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {albumsService} from "../../services";
+import {Albums} from "../../components";
 
-const AlbumsPage = () => {
+export const AlbumsPage = () => {
+    const [albums, setAlbums] = useState([]);
+    useEffect(() => {
+        albumsService.getAll().then(({data}) => setAlbums([...data]))
+    }, [])
     return (
-        <div>
-            AlbumsPage
+        <div style={{ width: '100%', margin: '0 auto' }}>
+            <h1>Albums</h1>
+            <Albums albums={albums} />
         </div>
     );
 };
-
-export {AlbumsPage};

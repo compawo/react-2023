@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import {Todos} from "../../components";
+import {todosService} from "../../services";
 
-const TodosPage = () => {
+export const TodosPage = () => {
+    const [todos, setTodos] = useState([]);
+    useEffect(() => {
+        todosService.getAll().then(({data}) => setTodos([...data]))
+    }, [])
     return (
-        <div>
-            TodosPage
+        <div style={{ width: '100%', margin: '0 auto' }}>
+            <h1>Todos Page</h1>
+            <Todos todos={todos} />
         </div>
     );
 };
-
-export {TodosPage};

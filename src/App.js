@@ -1,28 +1,24 @@
-import React from 'react';
-import {Route, Routes} from "react-router-dom";
-import {AlbumsPage, CommentsPage, HomePage, TodosPage} from "./pages";
-import {CommentsDetailsPage} from "./pages/CommentsDetailsPage/";
+import {urls} from "./configs";
 import {MainLayout} from "./layouts";
+import {AlbumsPage, CommentsPage, HomePage, PostByCommentPage, TodosPage} from "./pages";
+import {Route, Routes} from "react-router-dom";
 
 
 const App = () => {
-  return (
-      <div>
-          <Routes>
-              <Route path={'/'} element={<MainLayout/>}>
-                  <Route index element={<HomePage/>}/>
-                  <Route path={'albums'} element={<AlbumsPage/>}/>
-                  <Route path={'todos'} element={<TodosPage/>}/>
-                  <Route path={'comments'} element={<CommentsPage/>}>
-                  <Route path={'comments/:postId'} element={<CommentsDetailsPage/>}/>
-
-                  </Route>
-
-
-              </Route>
-          </Routes>
-      </div>
-  );
-};
+    return (
+        <div className="App">
+            <Routes>
+                <Route path={urls.index} element={<MainLayout/>}>
+                    <Route path={urls.index} index element={<HomePage/>}/>
+                    <Route path={urls.todos} element={<TodosPage/>}/>
+                    <Route path={urls.albums} element={<AlbumsPage/>}/>
+                    <Route path={urls.comments} element={<CommentsPage/>}>
+                        <Route path={urls.postId} element={<PostByCommentPage/>}/>
+                    </Route>
+                </Route>
+            </Routes>
+        </div>
+    );
+}
 
 export {App};
