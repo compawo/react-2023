@@ -2,10 +2,8 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {postService} from "../../services";
 
-const CommentsDetails = ({commentId, state}) => {
+const CommentsDetails = ({postId, state}) => {
     const [comment, setComment] = useState(null);
-
-    const commentId = useParams();
 
 
     useEffect(() => {
@@ -13,23 +11,22 @@ const CommentsDetails = ({commentId, state}) => {
             console.log(state);
             setComment({...state})
         } else {
-            postService.getById(commentId).then(({data}) => {
+            postService.getById(postId).then(({data}) => {
                 setComment(data)
             })
         }
-    }, [])
+    }, [postId])
 
     return (
         <div>
             {comment &&
                 <>
                     <div>id: {comment.id}</div>
-                    <div>postId: {comment.postId}</div>
+                    <div>commentId: {comment.postId}</div>
                     <div>title: {comment.title}</div>
                     <div>body: {comment.body}</div>
                 </>
             }
-
         </div>
     );
 };

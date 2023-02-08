@@ -5,13 +5,13 @@ import {CommentsDetails} from "../../components/CommentsDetails/CommentsDetails"
 
 
 const CommentsDetailsPage = () => {
-    const {commentId} = useParams();
+    const {postId} = useParams();
     const {state} = useLocation();
 
 
     return (
         <div>
-            <CommentsDetails commentId={commentId} state={state}/>
+            <CommentsDetails postId={postId}  state={state}/>
         </div>
     );
 };
