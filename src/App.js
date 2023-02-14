@@ -1,7 +1,9 @@
+import {Route, Routes} from "react-router-dom";
+
 import {urls} from "./configs";
 import {MainLayout} from "./layouts";
+
 import {AlbumsPage, CommentsPage, HomePage, PostByCommentPage, TodosPage} from "./pages";
-import {Route, Routes} from "react-router-dom";
 
 
 const App = () => {
