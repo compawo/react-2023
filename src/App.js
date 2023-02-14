@@ -1,9 +1,13 @@
 import React from 'react';
+import {Comments, Posts, Users} from "./components";
+
 
 const App = () => {
   return (
       <div>
-        app
+          <Users/>
+          <Posts/>
+          <Comments/>
       </div>
   );
 };
