@@ -1,9 +1,17 @@
-import React from 'react';
+import {Header} from "./components/Header/Header";
+import {Users} from "./components";
+import {userActions, userSlice} from "./redux";
+
+
 
 const App = () => {
-  return (
+    // console.log(userSlice);
+    console.log(userActions.getAll());
+
+    return (
       <div>
-        app
+        <Header/>
+        <Users/>
       </div>
   );
 };
